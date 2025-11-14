@@ -1,0 +1,153 @@
+/* Navbar Container */
+.navbar-custom {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  flex-shrink: 0;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Hamburger Animation (bars to X) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  font-size: 15px;
+  transition: color 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: var(--primary-red);
+}
+
+.nav-menu li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-red);
+}
+
+/* Quote Button */
+.quote-btn {
+  background: white;
+  color: var(--primary-red);
+  border: 2px solid var(--primary-red);
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.quote-btn:hover {
+  background: var(--primary-red);
+  color: white;
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile menu styles */
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    gap: 0;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .nav-menu li a.active::after {
+    display: none;
+  }
+
+  /* Hide quote button on mobile */
+  .quote-btn {
+    display: none;
+  }
+}

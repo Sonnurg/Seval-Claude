@@ -1,13 +1,54 @@
-body {
+/* Global Reset */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Body - Genel Ayarlar */
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* App Container */
+.App {
+  min-height: 100vh;
+}
+
+/* Genel Section Ayarları */
+section {
+  padding: 60px 0;
+}
+
+/* Renkler - Seval Gıda Brand */
+:root {
+  --primary-red: #d32f2f;
+  --dark-red: #b71c1c;
+  --green-accent: #81c784;
+  --green-dark: #4caf50;
+  --text-dark: #333;
+  --text-light: #555;
+  --text-gray: #999;
+  --bg-light: #f5f5f5;
+  --bg-white: #ffffff;
+}
+
+/* Bootstrap Override - Navbar için */
+.navbar {
+  padding: 0;
+}
+
+/* Container ayarları */
+.container {
+  max-width: 1200px;
 }
